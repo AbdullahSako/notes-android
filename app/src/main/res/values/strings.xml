@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="signIn"><b>Sign In</b></string>
+    <string name="askAccount">Dont have an account?</string>
+    <string name="createBtn">Create One</string>
+    <string name="logIn">LOG IN</string>
+    <string name="email_placeholder">Email</string>
+    <string name="password_placeholder">Password</string>
+    <string name="create_account_header"><b>Create new account</b></string>
+    <string name="confirm_password_placeholder">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+</resources>
