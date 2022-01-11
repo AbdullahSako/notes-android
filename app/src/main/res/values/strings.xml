@@ -9,4 +9,12 @@
     <string name="create_account_header"><b>Create new account</b></string>
     <string name="confirm_password_placeholder">Confirm Password</string>
     <string name="sign_up">Sign Up</string>
+    <string name="register_empty_validation_toast">Please fill all the fields</string>
+    <string name="register_valid_email_validation_toast">Please enter a valid email address</string>
+    <string name="register_password_length_validation_toast">Password should have more than 8 characters</string>
+    <string name="register_password_confirmation_validation_toast">Password Does not match</string>
+    <string name="register_sign_up_complete">Sign-Up complete</string>
+    <string name="register_email_exists_validation_toast">Email already Exists</string>
+    <string name="login_email_or_password_wrong">Email or password is wrong</string>
+
 </resources>
