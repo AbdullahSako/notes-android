@@ -16,5 +16,6 @@
     <string name="register_sign_up_complete">Sign-Up complete</string>
     <string name="register_email_exists_validation_toast">Email already Exists</string>
     <string name="login_email_or_password_wrong">Email or password is wrong</string>
+    <string name="add_note">Add Note</string>
 
 </resources>

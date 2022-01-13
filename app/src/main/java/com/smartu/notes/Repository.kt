@@ -7,6 +7,7 @@ import androidx.room.ForeignKey
 import androidx.room.Room
 import com.smartu.notes.database.Database
 import com.smartu.notes.models.Account
+import com.smartu.notes.models.Note
 import java.util.*
 import java.util.concurrent.Executors
 
@@ -25,8 +26,28 @@ class Repository private constructor(context:Context){
         executor.execute {
             notesDao.addUser(account)
         }
-
     }
+
+    fun getNotes(userId:UUID):LiveData<List<Note>> =notesDao.getNotes(userId)
+
+    fun addNote(note: Note){
+        executor.execute {
+            notesDao.addNote(note)
+        }
+    }
+
+    fun updateNote(note: Note){
+        executor.execute {
+            notesDao.updateNote(note)
+        }
+    }
+
+    fun deleteNote(note: Note){
+        executor.execute {
+            notesDao.deleteNote(note)
+        }
+    }
+
 
     companion object{
         private var INSTANCE:Repository?=null

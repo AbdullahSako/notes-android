@@ -8,14 +8,15 @@ import com.smartu.notes.R
 import com.smartu.notes.fragments.NotesFragment
 import java.util.*
 
-private const val EXTRA_TAG="com.smartu.notes.EXTRAUUID"
+const val EXTRA_TAG="com.smartu.notes.EXTRAUUID"
 
 class NotesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val notesFragment=NotesFragment()
+        val userID=intent.getSerializableExtra(EXTRA_TAG) as UUID
+        val notesFragment=NotesFragment.newInstance(userID)
 
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragment_container,notesFragment)
