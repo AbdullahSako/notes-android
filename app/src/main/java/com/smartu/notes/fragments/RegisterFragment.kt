@@ -36,7 +36,7 @@ class RegisterFragment:Fragment(R.layout.fragment_register) {
 
             }
 
-            override fun afterTextChanged(p0: Editable?) { //get ema
+            override fun afterTextChanged(p0: Editable?) { //get info of user from db based on email entered as he finished typing so there is time for the query
                 emailExists = ""
                 sRepo.getUser(mEmail.text.toString()).observe(viewLifecycleOwner,
                     Observer { user ->
@@ -53,7 +53,7 @@ class RegisterFragment:Fragment(R.layout.fragment_register) {
             if(mEmail.text.isEmpty() || mPassword.text.isEmpty() || mPasswordConfirm.text.isEmpty()){
                 Toast.makeText(activity, R.string.register_empty_validation_toast, Toast.LENGTH_LONG).show()
             }
-            else if(!Patterns.EMAIL_ADDRESS.matcher(mEmail.text.toString()).matches()){
+            else if(!Patterns.EMAIL_ADDRESS.matcher(mEmail.text.toString()).matches()){ //check if email is valid
                 Toast.makeText(activity, R.string.register_valid_email_validation_toast, Toast.LENGTH_LONG).show()
                 mEmail.background=resources.getDrawable(R.drawable.rounded_corner_red);
             }
@@ -71,11 +71,11 @@ class RegisterFragment:Fragment(R.layout.fragment_register) {
                     //hash password before inserting into database
                     val userPassword=BCrypt.hashpw(mPassword.text.toString(), BCrypt.gensalt())
                     val newAccount=Account(email = mEmail.text.toString(), password = userPassword)
-                    sRepo.addUser(newAccount)
+                    sRepo.addUser(newAccount) // add account to db
                     Toast.makeText(activity, R.string.register_sign_up_complete, Toast.LENGTH_SHORT).show()
-                    activity?.supportFragmentManager?.popBackStack();
+                    activity?.supportFragmentManager?.popBackStack(); // go back to login fragment
                 }
-                else{
+                else{ // if email exists in db
                     Toast.makeText(activity, R.string.register_email_exists_validation_toast, Toast.LENGTH_SHORT).show()
                     mEmail.background=resources.getDrawable(R.drawable.rounded_corner_red);
 
@@ -84,19 +84,19 @@ class RegisterFragment:Fragment(R.layout.fragment_register) {
             }
         }
 
-        mEmail.setOnFocusChangeListener { view, b ->
+        mEmail.setOnFocusChangeListener { view, b -> //change email field border on focus in case it was turned to red on validation
             if(view.hasFocus())
             {
                 mEmail.background=resources.getDrawable(R.drawable.rounded_corner_white);
             }
         }
-        mPassword.setOnFocusChangeListener { view, b ->
+        mPassword.setOnFocusChangeListener { view, b -> //change password field border on focus in case it was turned to red on validation
             if(view.hasFocus())
             {
                 mPassword.background=resources.getDrawable(R.drawable.rounded_corner_white);
             }
         }
-        mPasswordConfirm.setOnFocusChangeListener { view, b ->
+        mPasswordConfirm.setOnFocusChangeListener { view, b -> //change confirm password field border on focus in case it was turned to red on validation
             if(view.hasFocus())
             {
                 mPasswordConfirm.background=resources.getDrawable(R.drawable.rounded_corner_white);

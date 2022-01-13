@@ -18,6 +18,9 @@ interface Dao { // an interface that specifies to room library the operations us
     @Query("Select * from note where userId=(:userId)")
     fun getNotes(userId:UUID):LiveData<List<Note>>
 
+    @Query("Select * from note where id=(:noteID)")
+    fun getNote(noteID:UUID):LiveData<Note?>
+
     @Insert
     fun addUser(account: Account)
 

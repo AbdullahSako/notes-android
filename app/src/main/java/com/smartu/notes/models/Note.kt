@@ -7,4 +7,6 @@ import java.util.*
 
 @Entity(foreignKeys = [ForeignKey(entity = Account::class, parentColumns = arrayOf("id"),childColumns = arrayOf("userId"),onDelete = ForeignKey.CASCADE)])
 data class Note constructor(@PrimaryKey val id:UUID=UUID.randomUUID(),val userId:UUID, var title:String="", var noteBody:String="") {
+
+
 }

@@ -14,4 +14,6 @@
     <color name="orange">#ED8956</color>
     <color name="dark_orange">#db6c24</color>
     <color name="red">#FF0000</color>
+    <color name="dark_grey">#121212</color>
+    <color name="hint">#808080</color>
 </resources>

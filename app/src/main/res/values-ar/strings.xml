@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="app_name_bold"><b>Notes</b></string>
+    <string name="signIn"><b>تسجيل الدخول</b></string>
+    <string name="askAccount">ليس لديك حساب؟</string>
+    <string name="createBtn">انشاء حساب</string>
+    <string name="logIn">تسجيل الدخول</string>
+    <string name="email_placeholder">ايميل</string>
+    <string name="password_placeholder">كلمة السر</string>
+    <string name="create_account_header"><b>انشاء حساب جديد</b></string>
+    <string name="confirm_password_placeholder">تأكيد كلمة السر</string>
+    <string name="sign_up">اشتراك</string>
+    <string name="register_empty_validation_toast">الرجاء تعبئة جميع الحقول</string>
+    <string name="register_valid_email_validation_toast">يرجى إدخال عنوان بريد إلكتروني صالح</string>
+    <string name="register_password_length_validation_toast">يجب أن تحتوي كلمة المرور على أكثر من 8 أحرف</string>
+    <string name="register_password_confirmation_validation_toast">كلمة السر غير متطابقة</string>
+    <string name="register_sign_up_complete">اكتمل التسجيل</string>
+    <string name="register_email_exists_validation_toast">البريد الالكتروني موجود</string>
+    <string name="login_email_or_password_wrong">البريد الإلكتروني أو كلمة المرور خاطئة</string>
+    <string name="add_note">اضف ملاحظة</string>
+    <string name="add_a_note">اضف ملاحظة</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="settings">إعدادات</string>
+    <string name="arabic">العربية</string>
+    <string name="english">الإنجليزية</string>
+    <string name="language">اللغة</string>
+    <string name="theme">سمة</string>
+    <string name="log_out">تسجيل الخروج</string>
+    <string name="back_press_check">انقر مرة أخرى للخروج</string>
+    <string name="title">العنوان</string>
+    <string name="save">حفظ</string>
+    <string name="type">ابدا بالكتابةٍ…</string>
+    <string name="title_validation">الرجاء ادخال العنوان</string>
+    <string name="delete">الحذف</string>
+
+
+</resources>

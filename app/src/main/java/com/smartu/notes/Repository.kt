@@ -13,7 +13,7 @@ import java.util.concurrent.Executors
 
 private const val DATABASE_NAME="Notes-Database"
 
-class Repository private constructor(context:Context){
+class Repository private constructor(context:Context){ //access db through this class
 
     private val database:Database= Room.databaseBuilder(context.applicationContext,Database::class.java,DATABASE_NAME).build()
     private val notesDao=database.Dao()
@@ -29,6 +29,7 @@ class Repository private constructor(context:Context){
     }
 
     fun getNotes(userId:UUID):LiveData<List<Note>> =notesDao.getNotes(userId)
+    fun getNote(noteID:UUID):LiveData<Note?> =notesDao.getNote(noteID)
 
     fun addNote(note: Note){
         executor.execute {
